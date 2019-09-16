@@ -1,5 +1,3 @@
-
-
 const path = require("path");
 const fs = require("fs");
 const url = require("url");
@@ -69,13 +67,15 @@ const resolveModule = (resolveFn, filePath) => {
 module.exports = {
   dotenv: resolveApp(".env"),
   appPath: resolveApp("."),
+  configPath: __dirname,
   appBuild: resolveApp("build"),
   appPublic: resolveApp("public"),
   appHtml: resolveApp("public/index.html"),
   appIndexJs: resolveModule(resolveApp, "src/index"),
   appPackageJson: resolveApp("package.json"),
   appSrc: resolveApp("src"),
-  appTsConfig: resolveApp("tsconfig.js"),
+  // appTsConfig: resolveApp("tsconfig.js"),
+  appTsConfig: resolveApp(__dirname + "/tsconfig.json"),
   appJsConfig: resolveApp("jsconfig.json"),
   yarnLockFile: resolveApp("yarn.lock"),
   testsSetup: resolveModule(resolveApp, "src/setupTests"),

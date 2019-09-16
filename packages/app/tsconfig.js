@@ -1,1 +1,1 @@
-require("@resideo/tsconfig");
+module.exports = require("@resideo/tsconfig");
