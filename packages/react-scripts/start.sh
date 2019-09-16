@@ -1,0 +1,1 @@
+node ../../node_modules/@resideo/react-scripts/scripts/start
