@@ -1,5 +1,3 @@
-
-
 const fs = require("fs");
 const isWsl = require("is-wsl");
 const path = require("path");
@@ -42,7 +40,7 @@ const imageInlineSizeLimit = parseInt(
 );
 
 // Check if TypeScript is setup
-const useTypeScript = fs.existsSync(paths.appTsConfig);
+const useTypeScript = fs.existsSync(paths.appTsConfig());
 
 // style files regexes
 const cssRegex = /\.css$/;
@@ -616,7 +614,7 @@ module.exports = function(webpackEnv) {
           resolveTypeReferenceDirectiveModule: process.versions.pnp
             ? `${__dirname}/pnpTs.js`
             : undefined,
-          tsconfig: paths.appTsConfig,
+          tsconfig: paths.appTsConfig(),
           reportFiles: [
             "**",
             "!**/__tests__/**",

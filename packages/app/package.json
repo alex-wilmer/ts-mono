@@ -3,14 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@resideo/eslint-config": "0.1.0",
     "@resideo/react-scripts": "0.1.0",
     "@resideo/tsconfig": "1.0.0"
   },
   "scripts": {
     "start": "resideo-react-scripts"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "babel": {
     "presets": [

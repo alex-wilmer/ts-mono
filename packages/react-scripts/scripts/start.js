@@ -60,11 +60,11 @@ if (process.env.HOST) {
 
 // ---- TODO: write comment
 
-console.log(333, paths.configPath);
-process.exit();
-
 const tsconfig = require(paths.appPath + "/tsconfig");
-fs.writeFileSync(__dirname + "/tsconfig.json", JSON.stringify(tsconfig));
+fs.writeFileSync(
+  paths.appPath + "/tsconfig.json",
+  JSON.stringify(tsconfig, null, 2)
+);
 
 // We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.
@@ -83,7 +83,7 @@ checkBrowsers(paths.appPath, isInteractive)
     const config = configFactory("development");
     const protocol = process.env.HTTPS === "true" ? "https" : "http";
     const appName = require(paths.appPackageJson).name;
-    const useTypeScript = fs.existsSync(paths.appTsConfig);
+    const useTypeScript = fs.existsSync(paths.appTsConfig());
 
     console.log("does it exist? ", useTypeScript);
 
